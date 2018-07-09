@@ -47,29 +47,29 @@ gulp.task('server', ['scss'], function() {
                 }
             }))
     })
-    //     //压缩css
-    // gulp.task('scss', function() {
-    //         gulp.src('./src/scss/*.scss')
-    //             .pipe(sass())
-    //             .pipe(autoprefixer({
-    //                 browsers: ['last 2 versions', 'Android >= 4.0']
-    //             }))
-    //             .pipe(minCss())
-    //             .pipe(gulp.dest('build/css'))
-    //     })
-    //     //压缩js
-    // gulp.task('js', function() {
-    //     gulp.src('./src/js/*.js')
-    //         .pipe(uglify())
-    //         .pipe(gulp.dest('build/js'))
-    // })
-    // var options = {
-    //         //压缩html
-    //         collapseWhitespace: true
-    //     }
-    //     //压缩html
-    // gulp.task('html', function() {
-    //     gulp.src('./src/**/*.html')
-    //         .pipe(htmlmin())
-    //         .pipe(gulp.dest("build"))
-    // })
+    //压缩css
+gulp.task('scss', function() {
+        gulp.src('./src/scss/*.scss')
+            .pipe(sass())
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'Android >= 4.0']
+            }))
+            .pipe(minCss())
+            .pipe(gulp.dest('build/css'))
+    })
+    //压缩js
+gulp.task('js', function() {
+    gulp.src('./src/js/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('build/js'))
+})
+var options = {
+        //压缩html
+        collapseWhitespace: true
+    }
+    //压缩html
+gulp.task('html', function() {
+    gulp.src('./src/**/*.html')
+        .pipe(htmlmin())
+        .pipe(gulp.dest("build"))
+})
